@@ -1,0 +1,19 @@
+---
+# Test framework: "xcuitest" or "espresso"
+testFramework: xcuitest
+ 
+# Path to the app's .ipa or .app.
+app: 1
+
+# Path to the test runner app's .ipa or .app.
+test: app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+ 
+# Path where XML test reports will be saved.
+xmlFolder: ./
+
+# Define a list of devices on which the tests should be executed.
+devices:
+ 
+- datacenter: US
+  deviceNameQuery: iPhone.*
+
