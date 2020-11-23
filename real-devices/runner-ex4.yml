@@ -1,0 +1,53 @@
+---
+# See these links for details:
+#   * https://wiki.saucelabs.com/display/DOCS/Command+Reference+for+Sauce+Runner+for+Real+Devices
+#   * https://wiki.saucelabs.com/display/DOCS/Creating+a+Sauce+Runner+for+Real+Devices+Configuration+File
+#   * https://wiki.saucelabs.com/display/DOCS/Examples+of+Device+Specifications+for+the+Real+Device+Runner
+
+
+# Test framework: "xcuitest" or "espresso"
+testFramework: xcuitest
+
+# Path to the app's .ipa or .app.
+app: ./SauceLabs.Mobile.Sample.XCUITest.App.ipa
+
+# Path to the test runner app's .ipa or .app.
+test: ./SwagLabsMobileAppUITests-Runner.app
+
+# Path where XML test reports will be saved.
+xmlFolder: ./reports
+
+# Interval in seconds to check test results. Default is 30.
+checkFrequency: 10
+
+# Define a list of devices on which the tests should be executed.
+devices:
+
+  # Example 4: Run in parallel on hard-coded devices
+  # Run two tests on separate specific devices in my pool, this can be US/EU
+  # NOTE: if the devices are busy, these tests will wait until they are free.
+  - datacenter: EU
+    testname: Sauce Labs XCUITest Tests from Example 4 - testNoPasswordLogin
+    device: iPhone_XS_13_real
+
+    # Provide a list of test cases or test classes. If you want to run all tests of a class, provide the class name by itself.
+    #  To run a specific class method, provide both the class and method names.
+    #  You may specify multiple testClass parameters. As described above, each testClass will execute serially on the device indicated.
+    #  Each testClass must be preceded by a hyphen (e.g. '- testClass'), whereas testMethod parameters must be at the same indentation
+    #  level as testClass, without the hyphen
+    testsToRun:
+      - testClass: SwagLabsMobileAppUITests.LoginTests
+        testMethod: testNoPasswordLogin
+
+  - datacenter: EU
+    testname: Sauce Labs XCUITest Tests from Example 4 - testNoMatchLogin
+    device: iPhone_11_14_real
+
+    # Provide a list of test cases or test classes. If you want to run all tests of a class, provide the class name by itself.
+    #  To run a specific class method, provide both the class and method names.
+    #  You may specify multiple testClass parameters. As described above, each testClass will execute serially on the device indicated.
+    #  Each testClass must be preceded by a hyphen (e.g. '- testClass'), whereas testMethod parameters must be at the same indentation
+    #  level as testClass, without the hyphen
+    testsToRun:
+      - testClass: SwagLabsMobileAppUITests.LoginTests
+        testMethod: testNoMatchLogin
