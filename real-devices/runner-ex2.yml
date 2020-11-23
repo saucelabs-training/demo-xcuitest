@@ -35,4 +35,6 @@ devices:
     #  level as testClass, without the hyphen
     testsToRun:
       - testClass: SwagLabsMobileAppUITests.LoginTests
-        testsToRun: testSuccessfulLogin,testNoUsernameLogin
+        testMethod: testSuccessfulLogin
+      - testClass: SwagLabsMobileAppUITests.LoginTests
+        testMethod: testNoUsernameLogin
