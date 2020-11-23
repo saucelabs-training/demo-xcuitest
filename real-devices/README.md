@@ -13,8 +13,6 @@ of the native framework capability.
     1. [Example 4 - Run in parallel on hard-coded devices](#example-4---run-in-parallel-on-hard-coded-devices)
     1. [Example 5 - Parallel execution using dynamic devices](#example-5---parallel-execution-using-dynamic-devices)
     1. [Example 6 - Parallel execution by platform version](#example-6---parallel-execution-by-platform-version)
-    1. [Example 7 - Single file test annotation](#example-7---single-file-test-annotation)
-    1. [Example 8 - Multi file test annotation](#example-8---multi-file-test-annotation)
 
 ## Prerequisites
 The test runner used by Sauce Labs to execute the XCUITest tests is a downloadable Java jar file.
