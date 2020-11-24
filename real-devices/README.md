@@ -19,6 +19,9 @@ The test runner used by Sauce Labs to execute the XCUITest tests is a downloadab
 The current release is provided in this release but can also be downloaded from the 
 [Sauce Labs Wiki](https://wiki.saucelabs.com/display/DOCS/Using+XCUITest+for+Real+Device+Testing).
 
+> **NOTE:** The current working version that is provided is [1.8.0](https://s3.amazonaws.com/saucelabs-runner/v1.8/runner.jar).
+The latest version, which is 1.9.0, is not 100% stable when using with XCUITest.
+
 The scripts in this repo were developed on macOS and expect JDK 8 or higher to be installed and available.
 
 ## Setup
