@@ -13,6 +13,7 @@ of the native framework capability.
     1. [Example 4 - Run in parallel on hard-coded devices](#example-4---run-in-parallel-on-hard-coded-devices)
     1. [Example 5 - Parallel execution using dynamic devices](#example-5---parallel-execution-using-dynamic-devices)
     1. [Example 6 - Parallel execution by platform version](#example-6---parallel-execution-by-platform-version)
+    1. [Example 7 - Parallel execution by using an already uploaded appId](#example-7---parallel-execution-by-using-an-already-uploaded-appid)
 
 ## Prerequisites
 The test runner used by Sauce Labs to execute the XCUITest tests is a downloadable Java jar file.
@@ -66,7 +67,7 @@ There are 2 ways of executing XCUITests tests on Sauce Labs Real Devices:
 This project has been set up in such a way that it will use `yaml`-configuration files which will be explained in the 
 [Examples](#examples)-section
 
-Executing a test from this repository is a matter of running `run-runner.sh` and passing in the example number (1 ... 6):
+Executing a test from this repository is a matter of running `run-runner.sh` and passing in the example number (1 ... 7):
 
 ```bash
 $ ./run-runner.sh 1
@@ -102,3 +103,11 @@ different names for parallel processing.
 `runner-ex6.yml` uses only the `platformVersion` field to select an available device.
 Demonstrates the ability to pick a specific version of iOS from the pool of devices for executing tests in parallel, 
 including running 2 different classes.
+
+### Example 7 - Parallel execution by using an already uploaded appId
+`runner-ex7.yml` uses only uses the appId of an already uploaded app.
+This can be retrieved by going to:
+
+1. Sign into Sauce Labs at [https://app.saucelabs.com](https://app.saucelabs.com)
+1. Navigate to **SAUCE APPS &rarr; Legacy RDC &rarr; Your App Project**
+1. When you are on the dashboard go to **All Versions &rarr; Select a number from the app**
