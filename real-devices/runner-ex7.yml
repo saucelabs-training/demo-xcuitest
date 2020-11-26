@@ -9,7 +9,6 @@
 testFramework: xcuitest
 
 # Path to the app's .ipa or .app, or the testID which can be found in the legacy RDC
-# Go to
 app: 51
 
 # Path to the test runner app's .ipa or .app.
@@ -24,8 +23,8 @@ checkFrequency: 10
 # Define a list of devices on which the tests should be executed.
 devices:
 
-  # Example 7: Parallel execution by using an already uploaded appId
-  # Run two tests on separate specific devices in my pool, this can be US/EU.
+  # Example 7: Single execution by using an already uploaded app
+  # Run one test on separate a device in my pool, this can be US/EU.
   - datacenter: EU
     testname: Sauce Labs XCUITest Tests from Example 7 - appId - testLockedUserLogin
 
@@ -37,14 +36,3 @@ devices:
     testsToRun:
       - testClass: SwagLabsMobileAppUITests.LoginTests
         testMethod: testLockedUserLogin
-
-  - datacenter: EU
-    testname: Sauce Labs XCUITest Tests from Example 7 - appId - SwagLabsFlow
-
-    # Provide a list of test cases or test classes. If you want to run all tests of a class, provide the class name by itself.
-    #  To run a specific class method, provide both the class and method names.
-    #  You may specify multiple testClass parameters. As described above, each testClass will execute serially on the device indicated.
-    #  Each testClass must be preceded by a hyphen (e.g. '- testClass'), whereas testMethod parameters must be at the same indentation
-    #  level as testClass, without the hyphen
-    testsToRun:
-      - testClass: SwagLabsMobileAppUITests.SwagLabsFlow

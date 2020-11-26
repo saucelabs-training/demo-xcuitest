@@ -13,7 +13,7 @@ of the native framework capability.
     1. [Example 4 - Run in parallel on hard-coded devices](#example-4---run-in-parallel-on-hard-coded-devices)
     1. [Example 5 - Parallel execution using dynamic devices](#example-5---parallel-execution-using-dynamic-devices)
     1. [Example 6 - Parallel execution by platform version](#example-6---parallel-execution-by-platform-version)
-    1. [Example 7 - Parallel execution by using an already uploaded appId](#example-7---parallel-execution-by-using-an-already-uploaded-appid)
+    1. [Example 7 - Single execution by using an already uploaded app](#example-7---single-execution-by-using-an-already-uploaded-app)
 
 ## Prerequisites
 The test runner used by Sauce Labs to execute the XCUITest tests is a downloadable Java jar file.
@@ -104,7 +104,7 @@ different names for parallel processing.
 Demonstrates the ability to pick a specific version of iOS from the pool of devices for executing tests in parallel, 
 including running 2 different classes.
 
-### Example 7 - Parallel execution by using an already uploaded appId
+### Example 7 - Single execution by using an already uploaded app
 `runner-ex7.yml` uses only uses the appId of an already uploaded app.
 This can be retrieved by going to:
 
