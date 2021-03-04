@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
  <key>BuildMachineOSBuild</key>
- <string>19E211</string>
+ <string>20A2371</string>
  <key>CFBundleAllowMixedLocalizations</key>
  <true/>
  <key>CFBundleDevelopmentRegion</key>
@@ -31,23 +31,23 @@
  <key>DTCompiler</key>
  <string>com.apple.compilers.llvm.clang.1_0</string>
  <key>DTPlatformBuild</key>
- <string>17E218</string>
+ <string>18B58</string>
  <key>DTPlatformName</key>
  <string>iphoneos</string>
  <key>DTPlatformVersion</key>
- <string>13.4</string>
+ <string>14.2</string>
  <key>DTSDKBuild</key>
- <string>17E218</string>
+ <string>18B58</string>
  <key>DTSDKName</key>
- <string>iphoneos13.4.internal</string>
+ <string>iphoneos14.2.internal</string>
  <key>DTXcode</key>
- <string>1170</string>
+ <string>1220</string>
  <key>DTXcodeBuild</key>
- <string>11E800a</string>
+ <string>12B34</string>
  <key>LSRequiresIPhoneOS</key>
  <true/>
  <key>MinimumOSVersion</key>
- <string>8.0</string>
+ <string>9.0</string>
  <key>NFCReaderUsageDescription</key>
  <string>Access is necessary for automated testing.</string>
  <key>NSAppTransportSecurity</key>
@@ -62,6 +62,8 @@
  <key>NSCalendarsUsageDescription</key>
  <string>Access is necessary for automated testing.</string>
  <key>NSCameraUsageDescription</key>
+ <string>Access is necessary for automated testing.</string>
+ <key>NSContactsUsageDescription</key>
  <string>Access is necessary for automated testing.</string>
  <key>NSFaceIDUsageDescription</key>
  <string>Access is necessary for automated testing.</string>
