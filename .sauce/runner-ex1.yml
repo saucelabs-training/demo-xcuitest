@@ -16,8 +16,8 @@ sauce:
   build: Sauce XCUITest Real Devices
 
 xcuitest:
-  app: ./SauceLabs.Mobile.Sample.XCUITest.App.ipa
-  testApp: ./SwagLabsMobileAppUITests-Runner.app
+  app: ./apps/SauceLabs.Mobile.Sample.XCUITest.App.ipa
+  testApp: ./apps/SwagLabsMobileAppUITests-Runner.app
 
 suites:
   - name: "Sauce Labs XCUITest Tests from Example 1 - All tests"
