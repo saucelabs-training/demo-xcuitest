@@ -1,0 +1,41 @@
+# Example 5: Parallel execution using dynamic devices
+# Run two tests on separate random iPhone devices in my pool, this can be US/EU
+
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  concurrency: 10
+  metadata:
+    name: Testing XCUITEST Support
+    tags:
+      - ios
+      - xcuitest
+      - ex4
+  build: "Sauce XCUITest Real Devices"
+
+xcuitest:
+  app: ./SauceLabs.Mobile.Sample.XCUITest.App.ipa
+  testApp: ./SwagLabsMobileAppUITests-Runner.app
+
+suites:
+  - name: "Sauce Labs XCUITest Tests from Example 5 - testNoPasswordLogin"
+    testOptions:
+      class: ["SwagLabsMobileAppUITests.LoginTests/testNoPasswordLogin"]
+    devices:
+      # Run on whatever iPhone device is available
+      - name: "iPhone.*"
+  - name: "Sauce Labs XCUITest Tests from Example 5 - testNoMatchLogin"
+    testOptions:
+      class: ["SwagLabsMobileAppUITests.LoginTests/testNoMatchLogin"]
+    devices:
+      # Run on whatever iPhone device is available
+      - name: "iPhone.*"
+
+artifacts:
+  download:
+    when: always
+    match:
+      - "*.junit.xml"
+    directory: ./reports/

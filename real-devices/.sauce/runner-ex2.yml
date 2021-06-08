@@ -1,0 +1,35 @@
+# Example 2: Minimal configuration for 2 tests.
+# Run 2 tests on any available *single* device in the device pool, this can be US/EU
+
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  concurrency: 1
+  metadata:
+    name: Testing XCUITEST Support
+    tags:
+      - ios
+      - xcuitest
+      - ex2
+  build: Sauce XCUITest Real Devices
+
+xcuitest:
+  app: ./SauceLabs.Mobile.Sample.XCUITest.App.ipa
+  testApp: ./SwagLabsMobileAppUITests-Runner.app
+
+suites:
+  - name: "Sauce Labs XCUITest Tests from Example 2 - testSuccessfulLogin and testNoUsernameLogin"
+    testOptions:
+      class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin","SwagLabsMobileAppUITests.LoginTests/testNoUsernameLogin"]
+    devices:
+      # Run on whatever iPhone device is available
+      - name: "iPhone.*"
+
+artifacts:
+  download:
+    when: always
+    match:
+      - "*.junit.xml"
+    directory: ./reports/

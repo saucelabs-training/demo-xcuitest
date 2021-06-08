@@ -1,0 +1,33 @@
+# Example 1: minimal configuration.
+# Run all tests on any available *single* device in the device pool, this can be US/EU
+
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  concurrency: 1
+  metadata:
+    name: Testing XCUITEST Support
+    tags:
+      - ios
+      - xcuitest
+      - ex1
+  build: Sauce XCUITest Real Devices
+
+xcuitest:
+  app: ./SauceLabs.Mobile.Sample.XCUITest.App.ipa
+  testApp: ./SwagLabsMobileAppUITests-Runner.app
+
+suites:
+  - name: "Sauce Labs XCUITest Tests from Example 1 - All tests"
+    devices:
+      # Run on whatever iPhone device is available
+      - name: "iPhone.*"
+
+artifacts:
+  download:
+    when: always
+    match:
+      - "*.junit.xml"
+    directory: ./reports/
