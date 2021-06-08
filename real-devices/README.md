@@ -31,7 +31,12 @@ The application is bundled in [`SauceLabs.Mobile.Sample.XCUITest.App.ipa`](./Sau
 and the tests cases are bundled in [`SwagLabsMobileAppUITests-Runner.app`](./SwagLabsMobileAppUITests-Runner.app).
 
 ## Examples
-All below mentioned examples can be found in the [`.sauce`](./.sauce)-folder.
+All below mentioned examples can be found in the [`.sauce`](./.sauce)-folder. You can run the configurations by running
+the following command from the root of this folder
+
+      saucectl run --config ./.sauce/runner-ex{#}.yml
+
+The `#` stands for the number of the below mentioned examples.
 
 ### Example 1 - Minimal configuration for all tests
 `runner-ex1.yml` provides a minimum configuration needed to run the XCUITest tests.
