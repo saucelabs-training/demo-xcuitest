@@ -1,0 +1,45 @@
+# Example 6: Parallel execution by platform version
+# Run two tests on separate random iPhone devices in my pool, this can be US/EU
+#  Use `platformVersion` to find any free iPhone device with iOS 14.6 and 13.7
+#  and run the test on it.
+
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  concurrency: 10
+  metadata:
+    name: Testing XCUITEST Support
+    tags:
+      - ios
+      - xcuitest
+      - ex6
+  build: "Sauce XCUITest Real Devices"
+
+xcuitest:
+  app: ./apps/SauceLabs.Mobile.Sample.XCUITest.App.ipa
+  testApp: ./apps/SwagLabsMobileAppUITests-Runner.app
+
+suites:
+  - name: "Sauce Labs XCUITest Tests from Example 6 - testSuccessfulLogin"
+    testOptions:
+      class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin"]
+    devices:
+      # Run on whatever iPhone device is available with iOS versoin 14.6
+      - name: "iPhone.*"
+        platformVersion: "14.6"
+  - name: "Sauce Labs XCUITest Tests from Example 6 - testSuccessfulLogin"
+    testOptions:
+      class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin"]
+    devices:
+      # Run on whatever iPhone device is available with iOS versoin 13.7
+      - name: "iPhone.*"
+        platformVersion: "13.7"
+
+artifacts:
+  download:
+    when: always
+    match:
+      - "*.junit.xml"
+    directory: ./reports/

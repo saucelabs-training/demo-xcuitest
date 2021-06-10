@@ -68,3 +68,7 @@ test on. This is called static allocation. Still uses parallel execution.
 `runner-ex5.yml` uses the `dynamic` capability to look for available devices using wildcard names.
 This example demonstrates the ability to run a specified test(s) on a pool devices that are configured the same but have
 different names for parallel processing.
+
+### Example 6 - Parallel execution by platform version
+`runner-ex6.yml` uses only the `platformVersion` field to select an available device.
+Demonstrates the ability to pick a specific version of iOS from the pool of devices for executing tests in parallel.
