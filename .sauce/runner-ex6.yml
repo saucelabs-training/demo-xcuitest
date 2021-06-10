@@ -1,5 +1,7 @@
-# Example 5: Parallel execution using dynamic devices
+# Example 6: Parallel execution by platform version
 # Run two tests on separate random iPhone devices in my pool, this can be US/EU
+#  Use `platformVersion` to find any free iPhone device with iOS 14.6 and 13.7
+#  and run the test on it.
 
 apiVersion: v1alpha
 kind: xcuitest
@@ -12,7 +14,7 @@ sauce:
     tags:
       - ios
       - xcuitest
-      - ex4
+      - ex6
   build: "Sauce XCUITest Real Devices"
 
 xcuitest:
@@ -20,18 +22,18 @@ xcuitest:
   testApp: ./apps/SwagLabsMobileAppUITests-Runner.app
 
 suites:
-  - name: "Sauce Labs XCUITest Tests from Example 5 - testSuccessfulLogin"
+  - name: "Sauce Labs XCUITest Tests from Example 6 - testSuccessfulLogin"
     testOptions:
       class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin"]
     devices:
-      # Run on whatever iPhone device is available
+      # Run on whatever iPhone device is available with iOS versoin 14.6
       - name: "iPhone.*"
         platformVersion: "14.6"
-  - name: "Sauce Labs XCUITest Tests from Example 5 - testSuccessfulLogin"
+  - name: "Sauce Labs XCUITest Tests from Example 6 - testSuccessfulLogin"
     testOptions:
       class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin"]
     devices:
-      # Run on whatever iPhone device is available
+      # Run on whatever iPhone device is available with iOS versoin 13.7
       - name: "iPhone.*"
         platformVersion: "13.7"
 

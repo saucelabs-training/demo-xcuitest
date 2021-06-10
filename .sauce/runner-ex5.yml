@@ -12,7 +12,7 @@ sauce:
     tags:
       - ios
       - xcuitest
-      - ex4
+      - ex5
   build: "Sauce XCUITest Real Devices"
 
 xcuitest:
