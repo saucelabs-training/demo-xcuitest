@@ -1,6 +1,6 @@
 # Example 6: Parallel execution by platform version
 # Run two tests on separate random iPhone devices in my pool, this can be US/EU
-#  Use `platformVersion` to find any free iPhone device with iOS 14.6 and 13.7
+#  Use `platformVersion` to find any free iPhone device with iOS 14.8 and 13.7
 #  and run the test on it.
 
 apiVersion: v1alpha
@@ -26,9 +26,9 @@ suites:
     testOptions:
       class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin"]
     devices:
-      # Run on whatever iPhone device is available with iOS versoin 14.6
+      # Run on whatever iPhone device is available with iOS version 14.8
       - name: "iPhone.*"
-        platformVersion: "14.6"
+        platformVersion: "14.8"
   - name: "Sauce Labs XCUITest Tests from Example 6 - testSuccessfulLogin"
     testOptions:
       class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin"]

@@ -8,7 +8,6 @@ sauce:
   region: eu-central-1
   concurrency: 1
   metadata:
-    name: Testing XCUITEST Support
     tags:
       - ios
       - xcuitest
