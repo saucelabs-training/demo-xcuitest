@@ -1,0 +1,30 @@
+name: XCUITest - Example 4
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron:  '6 1 * * 0'
+
+env:
+  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
+  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install saucectl
+        uses: saucelabs/saucectl-run-action@v1
+        with:
+          skip-run: true
+          testing-environment: ""
+          concurrency: 10
+
+      - name: XCUITest - Example 4
+        run: saucectl run --config ./.sauce/runner-ex4.yml
