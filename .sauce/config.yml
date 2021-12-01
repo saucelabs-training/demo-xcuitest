@@ -1,0 +1,19 @@
+apiVersion: v1alpha
+kind: xcuitest
+showConsoleLog: false
+sauce:
+  region: eu-central-1
+  concurrency: 100
+xcuitest:
+  app: apps/MyDemoApp-1023370588.ipa
+  testApp: apps/MyDemoAppUITests-Runner-1966216460.ipa
+suites:
+- name: xcuitest - iPhone .*
+  devices:
+  - name: iPhone .*
+artifacts:
+  download:
+    match:
+    - '*'
+    when: always
+    directory: ./artifacts

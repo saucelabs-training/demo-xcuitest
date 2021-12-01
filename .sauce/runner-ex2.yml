@@ -6,22 +6,16 @@ kind: xcuitest
 sauce:
   # This can be `eu-central-1` or  `us-west-1`
   region: eu-central-1
-  concurrency: 1
-  metadata:
-    tags:
-      - ios
-      - xcuitest
-      - ex2
-  build: Sauce XCUITest Real Devices
+  concurrency: 10
 
 xcuitest:
-  app: ./apps/SauceLabs.Mobile.Sample.XCUITest.App.ipa
-  testApp: ./apps/SwagLabsMobileAppUITests-Runner.app
+  app: apps/MyDemoApp-1023370588.ipa
+  testApp: apps/MyDemoAppUITests-Runner-1966216460.ipa
 
 suites:
-  - name: "Sauce Labs XCUITest Tests from Example 2 - testSuccessfulLogin and testNoUsernameLogin"
+  - name: "Example 2 - testProductListingPageAddItemToCart and testProductDetailsPrice"
     testOptions:
-      class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin","SwagLabsMobileAppUITests.LoginTests/testNoUsernameLogin"]
+      class: ["MyDemoAppUITests.ProductListingPageTest/testProductListingPageAddItemToCart","MyDemoAppUITests.ProductDetailsTest/testProductDetailsPrice"]
     devices:
       # Run on whatever iPhone device is available
       - name: "iPhone.*"
