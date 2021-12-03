@@ -9,8 +9,8 @@ sauce:
   concurrency: 10
 
 xcuitest:
-  app: apps/MyDemoApp-1023370588.ipa
-  testApp: apps/MyDemoAppUITests-Runner-1966216460.ipa
+  app: apps/MyDemoApp.ipa
+  testApp: apps/MyDemoAppUITests-Runner.ipa
 
 suites:
   - name: "Example 5 - testProductListingPageAddMultipleItemsToCart"
@@ -19,12 +19,14 @@ suites:
     devices:
       # Run on whatever iPhone device is available
       - name: "iPhone.*"
+        platformVersion: "14"
   - name: "Example 5 - testProductDetailsColorsSwitch"
     testOptions:
       class: ["MyDemoAppUITests.ProductDetailsTest/testProductDetailsColorsSwitch"]
     devices:
       # Run on whatever iPhone device is available
       - name: "iPhone.*"
+        platformVersion: "14"
 
 artifacts:
   download:

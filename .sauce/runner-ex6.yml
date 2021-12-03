@@ -11,8 +11,8 @@ sauce:
   concurrency: 10
 
 xcuitest:
-  app: apps/MyDemoApp-1023370588.ipa
-  testApp: apps/MyDemoAppUITests-Runner-1966216460.ipa
+  app: apps/MyDemoApp.ipa
+  testApp: apps/MyDemoAppUITests-Runner.ipa
 
 suites:
   - name: "Example 6 - testProductListingPageAddMultipleItemsToCart"
@@ -36,3 +36,5 @@ artifacts:
     match:
       - "*.junit.xml"
     directory: ./reports/
+
+
