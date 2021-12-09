@@ -11,10 +11,6 @@
 This repository will hold multiple examples on how to run XCUITests tests on the Sauce Labs cloud.
 More information on how to use it can be found below.
 
-> **NOTE:** If you want to see examples using the Legacy RDC then please check the 
-> [Legacy RDC](https://github.com/saucelabs-training/demo-xcuitest/tree/legacy-rdc) branch. Mind the fact that the 
-> Legacy RDC will be EOL in September 2021. 
-
 ## Prerequisites
 - Please check our [documentation](https://docs.saucelabs.com/testrunner-toolkit/installation) for installing SauceCTL
 - Make sure you've set up your credentials on your local machine and or CI-pipeline, see
@@ -30,14 +26,11 @@ curl -L https://saucelabs.github.io/saucectl/install | bash
 
 ## Apps
 A prebuilt native iOS application and it's XCUITests test cases are included in this repo. Source to this application
-can be found on GitHub in this [folder](https://github.com/saucelabs/sample-app-mobile/tree/master/ios/SwagLabsMobileAppUITests/).
-The two test-classes can be found here:
+can be found on GitHub in this [folder](https://github.com/saucelabs/my-demo-app-ios).
+The test-classes can be found [here](https://github.com/saucelabs/my-demo-app-ios/tree/main/My%20Demo%20AppUITests/Tests).
 
-- [SwagLabsMobileAppUITests.LoginTest](https://github.com/saucelabs/sample-app-mobile/blob/master/ios/SwagLabsMobileAppUITests/LoginTests.swift)
-- [SwagLabsMobileAppUITests.SwagLabsFlow](https://github.com/saucelabs/sample-app-mobile/blob/master/ios/SwagLabsMobileAppUITests/SwagLabsFlow.swift)
-
-The application is bundled in [`SauceLabs.Mobile.Sample.XCUITest.App.ipa`](./apps/SauceLabs.Mobile.Sample.XCUITest.App.ipa)
-and the tests cases are bundled in [`SwagLabsMobileAppUITests-Runner.app`](./apps/SwagLabsMobileAppUITests-Runner.app).
+The application is bundled in [`MyDemoApp.ipa`](./apps/MyDemoApp.ipa)
+and the tests cases are bundled in [`MyDemoAppUITests-Runner.ipa`](./apps/MyDemoAppUITests-Runner.ipa).
 
 
 ## Examples
