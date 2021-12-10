@@ -26,9 +26,14 @@ suites:
       # Run on whatever iPhone device is available
       - name: "iPhone.*"
 
+reporters:
+  junit:
+    enabled: true
+    filename: ./reports/example-2-report.xml
+
 artifacts:
   download:
     when: always
     match:
-      - "*.junit.xml"
+    - "*"
     directory: ./reports/

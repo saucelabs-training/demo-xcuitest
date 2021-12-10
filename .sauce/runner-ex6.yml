@@ -37,9 +37,14 @@ suites:
       - name: "iPhone.*"
         platformVersion: "13.7"
 
+reporters:
+  junit:
+    enabled: true
+    filename: ./reports/example-6-report.xml
+
 artifacts:
   download:
     when: always
     match:
-      - "*.junit.xml"
+    - "*"
     directory: ./reports/

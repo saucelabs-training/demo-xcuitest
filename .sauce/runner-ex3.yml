@@ -32,9 +32,14 @@ suites:
       # Run on a random iPhone X device
       - name: "iPhone X.*"
 
+reporters:
+  junit:
+    enabled: true
+    filename: ./reports/example-3-report.xml
+
 artifacts:
   download:
     when: always
     match:
-      - "*.junit.xml"
+    - "*"
     directory: ./reports/
