@@ -9,33 +9,26 @@ sauce:
   # This can be `eu-central-1` or  `us-west-1`
   region: eu-central-1
   concurrency: 10
-  metadata:
-    name: Testing XCUITEST Support
-    tags:
-      - ios
-      - xcuitest
-      - ex6
-  build: "Sauce XCUITest Real Devices"
 
 xcuitest:
-  app: ./apps/SauceLabs.Mobile.Sample.XCUITest.App.ipa
-  testApp: ./apps/SwagLabsMobileAppUITests-Runner.app
+  app: apps/MyDemoApp.ipa
+  testApp: apps/MyDemoAppUITests-Runner.ipa
 
 suites:
-  - name: "Sauce Labs XCUITest Tests from Example 6 - testSuccessfulLogin"
+  - name: "Example 6 - testProductListingPageAddMultipleItemsToCart"
     testOptions:
-      class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin"]
+      class: ["MyDemoAppUITests.ProductListingPageTest/testProductListingPageAddMultipleItemsToCart"]
     devices:
       # Run on whatever iPhone device is available with iOS version 14.8
       - name: "iPhone.*"
         platformVersion: "14.8"
-  - name: "Sauce Labs XCUITest Tests from Example 6 - testSuccessfulLogin"
+  - name: "Example 6 - testProductDetailsColorsSwitch"
     testOptions:
-      class: ["SwagLabsMobileAppUITests.LoginTests/testSuccessfulLogin"]
+      class: ["MyDemoAppUITests.ProductDetailsTest/testProductDetailsColorsSwitch"]
     devices:
-      # Run on whatever iPhone device is available with iOS versoin 13.7
+      # Run on whatever iPhone device is available with iOS version 14
       - name: "iPhone.*"
-        platformVersion: "13.7"
+        platformVersion: "14"
 
 reporters:
   junit:
@@ -48,3 +41,5 @@ artifacts:
     match:
     - "*"
     directory: ./reports/
+
+

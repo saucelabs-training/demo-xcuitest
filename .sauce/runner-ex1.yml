@@ -6,23 +6,18 @@ kind: xcuitest
 sauce:
   # This can be `eu-central-1` or  `us-west-1`
   region: eu-central-1
-  concurrency: 1
-  metadata:
-    tags:
-      - ios
-      - xcuitest
-      - ex1
-  build: Sauce XCUITest Real Devices
+  concurrency: 10
 
 xcuitest:
-  app: ./apps/SauceLabs.Mobile.Sample.XCUITest.App.ipa
-  testApp: ./apps/SwagLabsMobileAppUITests-Runner.app
+  app: apps/MyDemoApp.ipa
+  testApp: apps/MyDemoAppUITests-Runner.ipa
 
 suites:
-  - name: "Sauce Labs XCUITest Tests from Example 1 - All tests"
+  - name: "Example 1 - Run all tests"
     devices:
       # Run on whatever iPhone device is available
       - name: "iPhone.*"
+        platformVersion: "14"
 
 reporters:
   junit:
