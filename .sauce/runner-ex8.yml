@@ -1,0 +1,32 @@
+# Example 8: Sharded tests from classes
+
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  concurrency: 10
+
+xcuitest:
+  app: apps/MyDemoApp.ipa
+  testApp: apps/MyDemoAppUITests-Runner.ipa
+
+suites:
+  - name: 'Example 7 - Sharded Tests From Classes'
+    shard: concurrency
+    testListFile: test_classes_and_tests.txt
+    devices:
+      # Run on whatever iPhone device is available with iOS version 14.8 or higher
+      - name: 'iPhone.*'
+        platformVersion: '^1(4.[3-9]|[5-6]).*'
+
+reporters:
+  junit:
+    enabled: true
+
+artifacts:
+  download:
+    when: always
+    match:
+      - '*'
+    directory: ./reports/

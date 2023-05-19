@@ -21,14 +21,14 @@ suites:
     devices:
       # Run on whatever iPhone device is available with iOS version 14.8
       - name: "iPhone.*"
-        platformVersion: "14.8"
+        platformVersion: '^1(4.[3-9]|[5-6]).*'
   - name: "Example 6 - testProductDetailsColorsSwitch"
     testOptions:
       class: ["MyDemoAppUITests.ProductDetailsTest/testProductDetailsColorsSwitch"]
     devices:
       # Run on whatever iPhone device is available with iOS version 14
       - name: "iPhone.*"
-        platformVersion: "14"
+        platformVersion: '^1(4.[3-9]|[5-6]).*'
 
 reporters:
   junit:
