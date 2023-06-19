@@ -4,3 +4,4 @@
 # Extra
 .idea
 reports
+*.xctestplan

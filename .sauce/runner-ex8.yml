@@ -6,13 +6,15 @@ sauce:
   # This can be `eu-central-1` or  `us-west-1`
   region: eu-central-1
   concurrency: 10
+  metadata:
+    build: Sharded Tests From Classes
 
 xcuitest:
   app: apps/MyDemoApp.ipa
   testApp: apps/MyDemoAppUITests-Runner.ipa
 
 suites:
-  - name: 'Example 7 - Sharded Tests From Classes'
+  - name: 'Sharded Tests From Classes'
     shard: concurrency
     testListFile: test_classes_and_tests.txt
     devices:
