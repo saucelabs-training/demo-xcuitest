@@ -85,7 +85,7 @@ Demonstrates the ability to pick a specific version of iOS from the pool of devi
 #### Example 10 - Running a localization test
 [`runner-ex10.yml`](/.sauce/runner-ex10.yml). This example demonstrates the ability to run a localization test.
 
-### Simulators
+### Simulators (in BETA)
 
 #### Example 101 - Running all Tests
 [`runner-ex101.yml`](/.sauce/runner-ex101.yml). This example shows how to run all tests on a simulator.
