@@ -1,0 +1,39 @@
+# Example 9: Failed Tests
+# Run failed tests
+
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  concurrency: 10
+  metadata:
+    tags:
+      - tag test xcuitest failed
+
+xcuitest:
+  app: apps/MyDemoApp.ipa
+  testApp: apps/MyDemoAppUITests-Runner.ipa
+
+suites:
+  - name: FailedTests
+    testOptions:
+      class: ["MyDemoAppUITests.FailedTests"]
+    devices:
+      # Run on whatever iPhone device is available with iOS version 14.3 or higher
+      - name: "iPhone.*"
+        platformVersion: '^1(4.[3-9]|[5-6]).*'
+
+reporters:
+  junit:
+    enabled: true
+    filename: ./reports/example-9-report.xml
+
+artifacts:
+  download:
+    when: always
+    match:
+    - "*"
+    directory: ./reports/
+
+

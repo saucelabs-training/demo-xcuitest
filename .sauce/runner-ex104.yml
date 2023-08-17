@@ -1,0 +1,35 @@
+# Example 104: Simulators Sharded methods
+
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  concurrency: 10
+  metadata:
+    tags:
+      - tag test xcuitest simulators shardedmethods
+
+xcuitest:
+  app: apps/MyDemoAppSimulator.zip
+  testApp: apps/MyDemoAppUITestsSimulator-Runner.zip
+
+suites:
+  - name: 'Example 104 - Sharded methods'
+    shard: concurrency
+    testListFile: test_classes_and_tests_sims.txt
+    simulators:
+      - name: 'iPhone 13 Simulator'
+        platformVersions:
+          - '15.5'
+
+reporters:
+  junit:
+    enabled: true
+
+artifacts:
+  download:
+    when: always
+    match:
+      - '*'
+    directory: ./reports/

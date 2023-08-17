@@ -25,12 +25,17 @@ curl -L https://saucelabs.github.io/saucectl/install | bash
 > ⚠️ Make sure saucectl version is newer than **v0.44.0**
 
 ## Apps
-A prebuilt native iOS application and its XCUITests test cases are included in this repo. The source of this application
+Prebuilt native iOS applications and their XCUITests test cases are included in this repo. The source of this application
 can be found on GitHub in this [folder](https://github.com/saucelabs/my-demo-app-ios).
 The test classes can be found [here](https://github.com/saucelabs/my-demo-app-ios/tree/main/My%20Demo%20AppUITests/Tests).
 
+### Real Devices
 The application is bundled in [`MyDemoApp.ipa`](./apps/MyDemoApp.ipa)
 and the test cases are bundled in [`MyDemoAppUITests-Runner.ipa`](./apps/MyDemoAppUITests-Runner.ipa).
+
+### Simulators
+The application is bundled in [`MyDemoAppSimulator.zip`](./apps/MyDemoAppSimulator.zip)
+and the test cases are bundled in [`MyDemoAppUITestsSimulator-Runner.zip`](./apps/MyDemoAppUITestsSimulator-Runner.zip).
 
 
 ## Examples
@@ -41,33 +46,55 @@ the following command from the root of this folder
 
 The `#` stands for the number of the below-mentioned examples.
 
-### Example 1 - Minimal configuration for all tests
+### Real Devices
+
+#### Example 1 - Minimal configuration for all tests
 [`runner-ex1.yml`](/.sauce/runner-ex1.yml) provides a minimum configuration needed to run the XCUITest tests.
 In this example, all test cases are executed on a single, available device in sequential order.
 
-### Example 2 - Minimal configuration for 2 tests
+#### Example 2 - Minimal configuration for 2 tests
 [`runner-ex2.yml`](/.sauce/runner-ex2.yml) provides a minimum configuration needed to run the XCUITest tests.
 In this example, there are two test cases from one class executed on a single, available device in sequential order.
 
-### Example 3 - Run each test on its own device
+#### Example 3 - Run each test on its own device
 [`runner-ex3.yml`](/.sauce/runner-ex3.yml) breaks apart the execution of the two test cases such that they can run in 
 parallel on separate devices that are available (ie., not in use) in the pool.
 
-### Example 4 - Run in parallel on hard-coded devices
+#### Example 4 - Run in parallel on hard-coded devices
 [`runner-ex4.yml`](/.sauce/runner-ex4.yml) modifies the second example by specifying which *hardcoded/fixed* device in 
 the pool to execute each test on. This is called static allocation. Still uses parallel execution.
 
-### Example 5 - Parallel execution using dynamic devices
+#### Example 5 - Parallel execution using dynamic devices
 [`runner-ex5.yml`](/.sauce/runner-ex5.yml) uses the `dynamic` capability to look for available devices using wildcard 
 names. This example demonstrates the ability to run a specified test(s) on a pool of devices that are configured the same 
 but have different names for parallel processing.
 
-### Example 6 - Parallel execution by platform version
+#### Example 6 - Parallel execution by platform version
 [`runner-ex6.yml`](/.sauce/runner-ex6.yml) uses only the `platformVersion` field to select an available device.
 Demonstrates the ability to pick a specific version of iOS from the pool of devices for executing tests in parallel.
 
-### Example 7 - Sharding by class name
+#### Example 7 - Sharding by class name
 [`runner-ex7.yml`](/.sauce/runner-ex7.yml) uses `shard` and `testListFile`. This example demonstrates the ability to shard all classes over 3 devices.
 
-### Example 8 - Sharding by method name
+#### Example 8 - Sharding by method name
 [`runner-ex8.yml`](/.sauce/runner-ex8.yml) uses `shard` and `testListFile`. This example demonstrates the ability to shard all 20 methods over 10 devices.
+
+#### Example 9 - Running only Failed Tests
+[`runner-ex9.yml`](/.sauce/runner-ex9.yml). This example demonstrates the ability to run only failed tests.
+
+#### Example 10 - Running a localization test
+[`runner-ex10.yml`](/.sauce/runner-ex10.yml). This example demonstrates the ability to run a localization test.
+
+### Simulators
+
+#### Example 101 - Running all Tests
+[`runner-ex101.yml`](/.sauce/runner-ex101.yml). This example shows how to run all tests on a simulator.
+
+#### Example 102 - Running all Tests on two simulators
+[`runner-ex102.yml`](/.sauce/runner-ex102.yml). This example shows how to run all tests on two simulators.
+
+#### Example 103 - Sharding by class name
+[`runner-ex103.yml`](/.sauce/runner-ex103.yml) uses `shard` and `testListFile`. This example demonstrates the ability to shard all classes over 6 simulators.
+
+#### Example 104 - Sharding by method name
+[`runner-ex104.yml`](/.sauce/runner-ex104.yml) uses `shard` and `testListFile`. This example demonstrates the ability to shard all 20 methods over 10 simulators.

@@ -1,0 +1,43 @@
+# Example 102: Run on 2 Simulators
+# Run XCUITests on Simulators
+
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  concurrency: 10
+  metadata:
+    tags:
+      - tag test xcuitest 2simulators
+
+xcuitest:
+  app: apps/MyDemoAppSimulator.zip
+  testApp: apps/MyDemoAppUITestsSimulator-Runner.zip
+
+suites:
+  - name: XCUITests on 2 Simulators
+    testOptions:
+      # Do not run the failed tests
+      notClass: ["MyDemoAppUITests/FailedTests"]
+    simulators:
+      - name: "iPhone 13 Simulator"
+        platformVersions:
+          - "15.5"
+      - name: "iPhone 14 Simulator"
+        platformVersions:
+          - "16.2"
+
+reporters:
+  junit:
+    enabled: true
+    filename: ./reports/example-102-report.xml
+
+artifacts:
+  download:
+    when: always
+    match:
+    - "*"
+    directory: ./reports/
+
+

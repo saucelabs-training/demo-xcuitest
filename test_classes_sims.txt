@@ -1,0 +1,6 @@
+MyDemoAppUITests/FailedTests
+MyDemoAppUITests/LocalizationTest
+MyDemoAppUITests/NavigationTest
+MyDemoAppUITests/ProductDetailsTest
+MyDemoAppUITests/ProductListingPageTest
+MyDemoAppUITests/RotationTest
