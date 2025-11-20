@@ -1,4 +1,5 @@
-# Example 10: Run localization test on any iPhone device with iOS 14.3 or higher
+# Example 9: Failed Tests
+# Run failed tests
 
 apiVersion: v1alpha
 kind: xcuitest
@@ -8,16 +9,16 @@ sauce:
   concurrency: 10
   metadata:
     tags:
-      - tag test xcuitest localization
+      - tag test xcuitest failed
 
 xcuitest:
   app: apps/MyDemoApp.ipa
   testApp: apps/MyDemoAppUITests-Runner.ipa
 
 suites:
-  - name: testLocalization
+  - name: FailedTests
     testOptions:
-      class: ["MyDemoAppUITests.LocalizationTest/testLocalization"]
+      class: ["MyDemoAppUITests.FailedTests"]
     devices:
       # Run on whatever iPhone device is available with iOS version 14.3 or higher
       - name: "iPhone.*"
@@ -26,7 +27,7 @@ suites:
 reporters:
   junit:
     enabled: true
-    filename: ./reports/example-10-report.xml
+    filename: ./reports/example-9-report.xml
 
 artifacts:
   download:

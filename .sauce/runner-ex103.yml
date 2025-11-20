@@ -15,7 +15,7 @@ xcuitest:
   testApp: apps/MyDemoAppUITestsSimulator-Runner.zip
 
 suites:
-  - name: 'Example 103 - Sharded Classes'
+  - name: 'Example 103 - Sharded by concurrency and test classes'
     shard: concurrency
     testListFile: test_classes_sims.txt
     simulators:

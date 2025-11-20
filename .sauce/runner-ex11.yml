@@ -1,4 +1,4 @@
-# Example 8: Sharded tests from classes
+# Example 10: Run localization test on any iPhone device with iOS 14.3 or higher
 
 apiVersion: v1alpha
 kind: xcuitest
@@ -7,28 +7,32 @@ sauce:
   region: eu-central-1
   concurrency: 10
   metadata:
-    build: Sharded Tests From Classes
+    tags:
+      - tag test xcuitest localization
 
 xcuitest:
   app: apps/MyDemoApp.ipa
   testApp: apps/MyDemoAppUITests-Runner.ipa
 
 suites:
-  - name: 'Sharded by list of test methods'
-    shard: testList
-    testListFile: test_classes_and_tests.txt
+  - name: testLocalization
+    testOptions:
+      class: ["MyDemoAppUITests.LocalizationTest/testLocalization"]
     devices:
-      # Run on whatever iPhone device is available with iOS version 14.8 or higher
-      - name: 'iPhone.*'
+      # Run on whatever iPhone device is available with iOS version 14.3 or higher
+      - name: "iPhone.*"
         platformVersion: '^1(4.[3-9]|[5-6]).*'
 
 reporters:
   junit:
     enabled: true
+    filename: ./reports/example-10-report.xml
 
 artifacts:
   download:
     when: always
     match:
-      - '*'
+    - "*"
     directory: ./reports/
+
+

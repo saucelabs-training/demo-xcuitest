@@ -15,8 +15,8 @@ xcuitest:
   testApp: apps/MyDemoAppUITestsSimulator-Runner.zip
 
 suites:
-  - name: 'Example 104 - Sharded by concurrency and test methods'
-    shard: concurrency
+  - name: 'Example 105 - Sharded by list of test methods'
+    shard: testList
     testListFile: test_classes_and_tests_sims.txt
     simulators:
       - name: 'iPhone 13 Simulator'
